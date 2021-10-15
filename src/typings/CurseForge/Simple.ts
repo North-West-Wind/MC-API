@@ -27,9 +27,9 @@ export class SimpleProject {
     readonly attachments: SimpleAttachment[];
     /** A link to the project */
     readonly url: string;
-    /** An array of files of the project */
     /** The amount of downloads of the project */
     readonly downloadCount: number;
+    /** An array of files of the project */
     readonly files: SimpleFile[];
     /** The time the project got created */
     readonly dateCreated: Date;
