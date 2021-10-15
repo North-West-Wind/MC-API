@@ -135,6 +135,8 @@ const ModsCategoryTypes = {
     TWITCH: 4671,
     CRAFTTWEAKER: 4773,
     FABRIC: 4780,
+    AUTOMATION: 4843,
+    MCREATOR: 4906,
 } as const;
 
 const ModPacksCategoryTypes = {
@@ -166,7 +168,7 @@ const CustomCategoryTypes = {
     RECIPES: 4554,
     WORLDGEN: 4555,
     PROGRESSION: 4556,
-    BUILDING: 4572,
+    BUILDING: 4752,
 } as const;
 
 const AddonCategoryTypes = {
