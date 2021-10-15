@@ -28,6 +28,8 @@ export class SimpleProject {
     /** A link to the project */
     readonly url: string;
     /** An array of files of the project */
+    /** The amount of downloads of the project */
+    readonly downloadCount: number;
     readonly files: SimpleFile[];
     /** The time the project got created */
     readonly dateCreated: Date;
@@ -57,6 +59,7 @@ export class SimpleProject {
         this.name = project.name;
         this.summary = project.summary;
         this.url = project.websiteUrl;
+        this.downloadCount = project.downloadCount;
         this.files = this.initFile(project.latestFiles, project.gameVersionLatestFiles);
         this.dateCreated = project.dateCreated;
         this.dateReleased = project.dateReleased;
