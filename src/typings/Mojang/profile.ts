@@ -61,10 +61,10 @@ export class Skin {
     public constructor(data: SkinResponse) {
         const buffer = Buffer.from(data.properties[0].value, 'base64');
         const info = JSON.parse(buffer.toString()) as decodedSkinData;
-        const skinType = parseInt(data.id[7], 16) ^
-                        parseInt(data.id[15], 16) ^
-                        parseInt(data.id[23], 16) ^
-                        parseInt(data.id[31], 16);
+        const skinType = parseInt(data.id[7] ?? '', 16) ^
+                        parseInt(data.id[15] ?? '', 16) ^
+                        parseInt(data.id[23] ?? '', 16) ^
+                        parseInt(data.id[31] ?? '', 16);
 
         this.id = data.id;
         this.name = data.name;

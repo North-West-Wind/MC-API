@@ -61,7 +61,7 @@ export async function getMultipleProjects(id: number[], simple = true): Promise<
  */
 export async function getProjectDescription(id: number): Promise<string> {
     const url = `${curseURL}/addon/${id}/description`;
-    const res = await axios.get(url);
+    const res = await axios.get<DocumentFragment>(url);
     return formatter.turndown(res.data);
 }
 
@@ -96,7 +96,7 @@ export async function getProjectFilesInfo(id: number, simple = true): Promise<Fi
  */
 export async function getProjectFileChangelog(projectId: number, fileId: number): Promise<string> {
     const url = `${curseURL}/addon/${projectId}/file/${fileId}/changelog`;
-    const res = await axios.get(url);
+    const res = await axios.get<DocumentFragment>(url);
     return formatter.turndown(res.data);
 }
 

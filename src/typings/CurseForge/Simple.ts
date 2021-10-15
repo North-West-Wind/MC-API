@@ -8,10 +8,7 @@ import type {
     Category,
     GameCategory,
     ValueOf } from '.';
-import {
-    File,
-    ReleaseType,
-} from '.';
+import { File, ReleaseType } from '.';
 import { curseforge } from '../../api';
 
 /**
@@ -81,7 +78,9 @@ export class SimpleProject {
         for (const l of latest) {
             if (cached.find(c => c.id === l.projectFileId)) continue;
             const filterd = latest.filter(f => f.projectFileId === l.projectFileId);
-            cached.push(new SimpleFile(files[0].projectId, filterd, !cached.find(c => c.gameVersion.includes(l.gameVersion))));
+            if (files[0]) {
+                cached.push(new SimpleFile(files[0].projectId, filterd, !cached.find(c => c.gameVersion.includes(l.gameVersion))));
+            }
             cached.sort((a, b) => a.id < b.id ? 1 : -1);
         }
 
@@ -200,8 +199,8 @@ export class SimpleFile {
             this.dependencies = file.dependencies.map(d => new SimpleDependency(d));
         } else {
             this.projectId = id;
-            this.id = file[0].projectFileId;
-            this.name = file[0].projectFileName;
+            this.id = file[0]?.projectFileId ?? 0;
+            this.name = file[0]?.projectFileName ?? '';
             this.url = null;
             this.size = null;
             this.date = null;
@@ -215,7 +214,7 @@ export class SimpleFile {
         for (const [k, v] of Object.entries(ReleaseType)) {
             if (file instanceof File) {
                 if (v === file.releaseType) this.releaseType = k as keyof typeof ReleaseType;
-            } else if (v === file[0].fileType) {
+            } else if (v === file[0]?.fileType) {
                 this.releaseType = k as keyof typeof ReleaseType;
             }
         }

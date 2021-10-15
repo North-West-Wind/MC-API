@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import type { SectionAndCategoryResolvable, ValueOf } from '.';
 import { CategoryList, SectionTypes } from '.';
 
@@ -15,7 +16,9 @@ export class Util {
     static resolveCategory(category?: SectionAndCategoryResolvable): { section?: ValueOf<typeof SectionTypes>, category?: ValueOf<typeof CategoryList> } {
         if (!category) return {};
 
+        /** @ts-ignore */
         const isSection = Object.keys(SectionTypes).find(s => Number(SectionTypes[s]) === Number(category) || s === category);
+        /** @ts-ignore */
         if (isSection) return { section: SectionTypes[isSection] as ValueOf<typeof SectionTypes> };
 
         for (const [k, v] of Object.entries(CategoryList)) {
