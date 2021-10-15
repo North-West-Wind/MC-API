@@ -88,8 +88,8 @@ export class ModLoaderInfo {
      */
     public constructor(data: ModLoaderInfo) {
         Object.assign(this, data);
-        this.versionJson = new ModLoaderFile(JSON.parse(data.versionJson as unknown as string));
-        this.installProfileJson = new Profile(JSON.parse(data.installProfileJson as unknown as string));
+        this.versionJson = new ModLoaderFile(JSON.parse(data.versionJson as unknown as string) as ModLoaderFile);
+        this.installProfileJson = new Profile(JSON.parse(data.installProfileJson as unknown as string) as Profile);
         this.dateModified = new Date(data.dateModified);
     }
 }

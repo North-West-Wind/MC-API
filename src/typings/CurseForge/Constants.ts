@@ -1,4 +1,4 @@
-import { ValueOf } from '.';
+import type { ValueOf } from '.';
 
 /**
  * Can be a name or ID number of section or category

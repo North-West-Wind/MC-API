@@ -1,4 +1,5 @@
-import { DependencyTypes, CFProject, ReleaseType, SimpleFile, SimpleProject, ValueOf } from '.';
+import type { DependencyTypes, CFProject, ReleaseType, SimpleProject, ValueOf } from '.';
+import { SimpleFile } from '.';
 import { curseforge } from '../..';
 
 /**

@@ -11,46 +11,46 @@ export type ProjectType = 'paper' | 'travertine' | 'waterfall';
  */
 export interface ProjectList {
     /** An array of available projects */
-    readonly projects: string[]
+    readonly projects: string[];
 }
 
 /** A project data base of Paper */
 export interface PaperProjectBase {
     /** The ID of the project */
-    readonly project_id: ProjectType
+    readonly project_id: ProjectType;
     /** The name of the project */
-    readonly project_name: string
+    readonly project_name: string;
 }
 
 /** Represents a project of Paper */
 export interface PaperProject extends PaperProjectBase {
     /** The version group of the project */
-    readonly version_groups: string[]
+    readonly version_groups: string[];
     /** The available version of the project */
-    readonly versions: string[]
+    readonly versions: string[];
 }
 
 /** Represents a version data */
 export interface PaperVersion extends PaperProjectBase {
     /** The version of the project */
-    readonly version: string
+    readonly version: string;
     /** The available builds of the version */
-    readonly builds: number[]
+    readonly builds: number[];
 }
 
 /** Represents a change data */
 export interface Change {
     /** A commit hash */
-    readonly commit: string
+    readonly commit: string;
     /** The summary of the commit */
-    readonly summary: string
+    readonly summary: string;
     /** The message of the commit */
-    readonly message: string
+    readonly message: string;
 }
 
 export interface PaperFile {
     /** The name of the file */
-    readonly name: string
+    readonly name: string;
     /** The sha256 of the file */
-    readonly sha256: string
+    readonly sha256: string;
 }

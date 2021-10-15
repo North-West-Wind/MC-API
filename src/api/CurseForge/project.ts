@@ -1,19 +1,7 @@
 import axios from 'axios';
 import turndown from 'turndown';
-import {
-    SearchOptions,
-    CFProject,
-    Util,
-    SortTypes,
-    File,
-    FeatureOptions,
-    ProjectTypeObject,
-    FeaturedProject,
-    PopularProject,
-    UpdatedProject,
-    SimpleProject,
-} from '../..';
-import { IFile, SimpleFile } from '../../typings';
+import type { SearchOptions, SimpleProject, SimpleFile, FeatureOptions, ProjectTypeObject } from '../..';
+import { CFProject, Util, SortTypes, IFile, File, FeaturedProject, PopularProject, UpdatedProject } from '../..';
 import { curseURL } from '../url';
 
 const formatter = new turndown();
@@ -140,9 +128,9 @@ export async function getFeatured(option?: Partial<FeatureOptions>): Promise<[Fe
         popularCount: option?.featured ?? 8,
         updatedCount: option?.updated ?? 8,
     };
-    const res = await axios.post<ProjectTypeObject>(url, data, { params });
-    const featured = res.data.Featured.map((d: CFProject) => new FeaturedProject(d));
-    const popular = res.data.Popular.map((d: CFProject) => new PopularProject(d));
-    const update = res.data.RecentlyUpdated.map((d: CFProject) => new UpdatedProject(d));
+    const res = await axios.post<unknown, ProjectTypeObject>(url, data, { params });
+    const featured = res.Featured.map((d: CFProject) => new FeaturedProject(d));
+    const popular = res.Popular.map((d: CFProject) => new PopularProject(d));
+    const update = res.RecentlyUpdated.map((d: CFProject) => new UpdatedProject(d));
     return [featured, popular, update];
 }

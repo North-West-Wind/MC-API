@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { CategoryInfo, CategoryResolvable, SectionResolvable, Util } from '../..';
+import type { CategoryResolvable, SectionResolvable } from '../..';
+import { CategoryInfo, Util } from '../..';
 import { curseURL } from '../url';
 
 /**

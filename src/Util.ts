@@ -1,4 +1,5 @@
-import { CategoryList, SectionAndCategoryResolvable, SectionTypes, ValueOf } from '.';
+import type { SectionAndCategoryResolvable, ValueOf } from '.';
+import { CategoryList, SectionTypes } from '.';
 
 /**
  * Contains various utility methods.
@@ -11,7 +12,7 @@ export class Util {
      * @return Category or section object
      * @throws Will throw an error when it cannot be resolved
      */
-    static resolveCategory(category?: SectionAndCategoryResolvable): {section?: ValueOf<typeof SectionTypes>, category?: ValueOf<typeof CategoryList>} {
+    static resolveCategory(category?: SectionAndCategoryResolvable): { section?: ValueOf<typeof SectionTypes>, category?: ValueOf<typeof CategoryList> } {
         if (!category) return {};
 
         const isSection = Object.keys(SectionTypes).find(s => Number(SectionTypes[s]) === Number(category) || s === category);

@@ -1,4 +1,4 @@
-import { ValueOf, SectionTypes } from '.';
+import type { ValueOf, SectionTypes } from '.';
 
 /**
  * Represents a game data

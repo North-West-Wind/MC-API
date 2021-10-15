@@ -1,15 +1,16 @@
-import {
+import type {
     CFProject,
-    File,
     LatestFile,
     Author,
     Attachment,
-    ReleaseType,
     Dependency,
     DependencyTypes,
     Category,
     GameCategory,
-    ValueOf,
+    ValueOf } from '.';
+import {
+    File,
+    ReleaseType,
 } from '.';
 import { curseforge } from '../../api';
 
@@ -170,7 +171,7 @@ export class SimpleFile {
     /** Whether or not this file is latest (null when unknown) */
     isLatest: boolean | null;
     /** Whether or not this file is available */
-    isAvailable: boolean | null ;
+    isAvailable: boolean | null;
     /** Whether or not this file is a server pack */
     isServerPack: boolean | null;
     /** The ID of the server pack if it is */

@@ -1,5 +1,5 @@
-import { Change, PaperFile, PaperProjectBase } from '.';
-import { ProjectType } from './schemes';
+import type { Change, PaperFile, PaperProjectBase } from '.';
+import type { ProjectType } from './schemes';
 import { paper } from '../../api';
 
 /**
@@ -68,7 +68,7 @@ export class PaperBuild implements PaperProjectBase {
     readonly build!: number;
     readonly time: Date;
     readonly changes!: Change[];
-    readonly downloads!: { readonly application: PaperFile; };
+    readonly downloads!: { readonly application: PaperFile };
 
     /**
      * @constructor

@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { UUIDresponse, Player, SkinResponse } from '../..';
+import type { UUIDresponse, SkinResponse } from '../..';
+import { Player } from '../..';
 import { Skin } from '../../typings';
 import { mojangAPI, mojangProfile } from '../url';
 

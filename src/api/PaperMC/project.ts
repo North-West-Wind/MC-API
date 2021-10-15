@@ -1,8 +1,9 @@
 import { createWriteStream } from 'fs';
 import { resolve } from 'path';
-import { Stream } from 'stream';
+import type { Stream } from 'stream';
 import axios from 'axios';
-import { PaperBuild, PaperProject, PaperVersion, ProjectList, ProjectType, VersionGroupProject } from '../..';
+import type { PaperProject, PaperVersion, ProjectList, ProjectType } from '../..';
+import { PaperBuild, VersionGroupProject } from '../..';
 import { papermcAPI } from '../url';
 
 /**

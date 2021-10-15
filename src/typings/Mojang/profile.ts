@@ -80,11 +80,11 @@ export class Skin {
  */
 export interface UUIDresponse {
     /** The UUID */
-    readonly id: string
+    readonly id: string;
     /** The player name */
-    readonly name: string
+    readonly name: string;
     /** Whether or not the user has migrated to mojang.com */
-    readonly legacy?: boolean
+    readonly legacy?: boolean;
 }
 
 /**
@@ -93,16 +93,16 @@ export interface UUIDresponse {
  */
 export interface SkinResponse {
     /** The UUID */
-    readonly id: string
+    readonly id: string;
     /** The player name */
-    readonly name: string
+    readonly name: string;
     /** The properties that includes skins and capes info */
     readonly properties: [{
         /** Always textures */
-        readonly name: 'textures'
+        readonly name: 'textures';
         /** The base64 string */
-        readonly value: string
-    }],
+        readonly value: string;
+    }];
 }
 
 /**
@@ -111,22 +111,22 @@ export interface SkinResponse {
  */
 interface decodedSkinData {
     /** The UUID */
-    readonly profileId: string
+    readonly profileId: string;
     /** The player name */
-    readonly profileName: string
+    readonly profileName: string;
     /** The timestamp */
-    readonly timestamp: number
+    readonly timestamp: number;
     /** The textures including skin anc cape links */
     readonly textures: {
         /** If player set their custom skin */
         readonly SKIN?: {
             /** A link to the skin texture */
-            readonly url: string
-        }
+            readonly url: string;
+        };
         /** If player set their custom cape */
         readonly CAPE?: {
             /** A link to the cape texture */
-            readonly url: string
-        }
-    }
+            readonly url: string;
+        };
+    };
 }

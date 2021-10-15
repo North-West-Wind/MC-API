@@ -116,7 +116,7 @@ export class UpdatedProject extends CFProject { }
  * @ignore
  */
 export interface ProjectTypeObject {
-    readonly Featured: FeaturedProject[]
-    readonly Popular: PopularProject[]
-    readonly RecentlyUpdated: UpdatedProject[]
+    readonly Featured: FeaturedProject[];
+    readonly Popular: PopularProject[];
+    readonly RecentlyUpdated: UpdatedProject[];
 }
