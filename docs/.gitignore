@@ -8,7 +8,6 @@ docs/api
 # Generated files
 .docusaurus
 .cache-loader
-typedoc-sidebar.js
 
 # Misc
 .DS_Store
