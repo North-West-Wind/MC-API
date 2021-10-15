@@ -39,11 +39,5 @@
         "strict": true,
         "target": "ESNext",
         "useDefineForClassFields": true
-    },
-    "files": [
-        "src/Object.d.ts"
-    ],
-    "include": [
-        "src/**/*"
-    ]
+    }
 }
